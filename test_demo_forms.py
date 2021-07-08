@@ -48,11 +48,6 @@ def test_forms01():
         currentaddress_input.send_keys('вулиця Пушкінська, 2а, Харків, Харківська область, Украина, 61000')
 
     # Need creare tests for State and Sity
-    import time
-    time.sleep(5)
 
-    with allure.step('Click on Submit button'):
-        ssubmit_button = driver.find_element_by_link_text("Submit")
-        ssubmit_button.click()
 
 
