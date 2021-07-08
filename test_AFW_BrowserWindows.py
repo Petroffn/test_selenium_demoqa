@@ -23,4 +23,3 @@ def test_AFW():
     driver.switch_to.window(driver.window_handles[1])
     with allure.step('Check title new page'):
         assert "'This is a sample page'" not in driver.page_source
-

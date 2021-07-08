@@ -244,6 +244,7 @@ def test_case06():
         linkhome = driver.find_element_by_xpath('//a[@id="simpleLink"]')
         linkhome.click()
 
+
     driver.switch_to.window(driver.window_handles[1])
     with allure.step('Check title new page'):
         assert "'© 2013-2020 TOOLSQA.COM | ALL RIGHTS RESERVED.'" not in driver.page_source
