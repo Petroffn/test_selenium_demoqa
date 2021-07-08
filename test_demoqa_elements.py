@@ -293,5 +293,7 @@ def test_case09():
         import time
         time.sleep(6)
 
+        # some text
+
     with allure.step('Check title '):
         assert "'Visible After 5 Seconds'" not in driver.page_source
