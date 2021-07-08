@@ -283,5 +283,19 @@ def test_case08():
 
     with allure.step('Check title '):
         assert "'Allure Report - Google Chrome 2021-07-05 11.16.35.png'" not in driver.page_source
+        
+def test_case09():
+    driver = webdriver.Chrome()
+    driver.get('https://demoqa.com/dynamic-properties')
+    driver.set_window_size(1920, 1080)
+    with allure.step('Whait 6 sek and check the button'):
+
+        import time
+        time.sleep(6)
+
+        # some tex
+
+    with allure.step('Check title '):
+        assert "'Visible After 5 Seconds'" not in driver.page_source
 
 
