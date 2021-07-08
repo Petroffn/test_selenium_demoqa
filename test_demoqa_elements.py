@@ -264,4 +264,24 @@ def test_case07():
             print
             "Image is visible on screen"
 
+    # Добавить тесты с ссылками
+
+def test_case08():
+    driver = webdriver.Chrome()
+    driver.get('https://demoqa.com/upload-download')
+    driver.set_window_size(1920, 1080)
+    with allure.step('Download image'):
+        download_button = driver.find_element_by_xpath('//a[@id="downloadButton"]')
+        download_button.click()
+
+    import time
+    time.sleep(3)
+    driver.refresh()
+
+    choosefile = driver.find_element_by_xpath('//input[@id="uploadFile"]')
+    choosefile.send_keys("D:\\Allure Report - Google Chrome 2021-07-05 11.16.35.png")
+
+    with allure.step('Check title '):
+        assert "'Allure Report - Google Chrome 2021-07-05 11.16.35.png'" not in driver.page_source
+
 
