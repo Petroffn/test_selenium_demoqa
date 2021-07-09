@@ -69,6 +69,17 @@ def test_forms01():
         currentaddress_input.send_keys('вулиця Пушкінська, 2а, Харків, Харківська область, Украина, 61000')
 
     # Need creare tests for State and Sity
+    with allure.step('Enter Current Address'):
+        state_button = driver.find_element_by_xpath('//input[@id="react-select-3-input"]')
+        state_button.send_keys('NCR')
+
+        import time
+        time.sleep(3)
+
+    with allure.step('Enter Current Address'):
+        sity_button = driver.find_element_by_xpath('//input[@id="react-select-4-input"]')
+        sity_button.send_keys('Delhi')
+
 
     import time
     time.sleep(7)
@@ -77,4 +88,5 @@ def test_forms01():
         submit1_button = driver.find_element_by_xpath('//button[@id="submit"]')
         submit1_button.click()
 
-
+    import time
+    time.sleep(10)
