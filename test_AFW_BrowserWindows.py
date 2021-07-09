@@ -32,10 +32,36 @@ def test_AFW():
         WebDriverWait(driver, 10).until(EC.alert_is_present())
         driver.switch_to.alert.accept()
 
-    with allure.step('OOpen Click me 3'):
+    with allure.step('Open Click me 3'):
         clickme3 = driver.find_element_by_xpath('//button[@id="confirmButton"]')
         clickme3.click()
-        link = driver.find_element_by_link_text('OK')
-        link.click()
+        WebDriverWait(driver, 10).until(EC.alert_is_present())
+        driver.switch_to.alert.accept()
         assert "'You selected Cancel'" not in driver.page_source
 
+    with allure.step('Open Click me 4'):
+        clickme3 = driver.find_element_by_xpath('//button[@id="promtButton"]')
+        clickme3.click()
+
+        obj = driver.switch_to.alert
+        obj.send_keys('Mykola')
+
+        import time
+        time.sleep(2)
+
+        obj.accept()
+
+        message = obj.text
+        print("Alert shows following message: " + message)
+
+        time.sleep(2)
+
+        obj.accept()
+
+        # get the text returned when OK Button is clicked.
+        txt = driver.find_element_by_id('msg')
+        print(txt.text)
+
+        #WebDriverWait(driver, 10).until(EC.alert_is_present())
+        #driver.switch_to.alert.accept()
+        assert "'You entered Mykola'" not in driver.page_source
