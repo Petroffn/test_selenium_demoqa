@@ -2,6 +2,7 @@ import allure
 from allure_commons.types import Severity
 from selenium.webdriver import ActionChains
 from selenium import webdriver
+from selenium.webdriver.support.select import Select
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait as wait
@@ -35,6 +36,9 @@ def test_forms01():
         name_input = driver.find_element_by_xpath('//input[@id="userNumber"]')
         name_input.send_keys('0661324657')
 
+    import time
+    time.sleep(3)
+
     with allure.step('Select data'):
         datefield = driver.find_element_by_id("dateOfBirthInput")
         datefield.click()
@@ -57,14 +61,20 @@ def test_forms01():
     picture = driver.find_element_by_xpath('//input[@id="uploadPicture"]')
     picture.send_keys("D:\\Allure Report - Google Chrome 2021-07-05 11.16.35.png")
 
+    import time
+    time.sleep(4)
+
     with allure.step('Enter Current Address'):
         currentaddress_input = driver.find_element_by_xpath('//textarea[@placeholder="Current Address"]')
         currentaddress_input.send_keys('вулиця Пушкінська, 2а, Харків, Харківська область, Украина, 61000')
 
     # Need creare tests for State and Sity
 
+    import time
+    time.sleep(7)
+
     with allure.step('Click on Submit button'):
-        submit_button = driver.find_element_by_xpath('//button[@id="submit"]')
-        submit_button.click()
+        submit1_button = driver.find_element_by_xpath('//button[@id="submit"]')
+        submit1_button.click()
 
 
