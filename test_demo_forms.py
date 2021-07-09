@@ -35,20 +35,21 @@ def test_forms01():
         name_input = driver.find_element_by_xpath('//input[@id="userNumber"]')
         name_input.send_keys('0661324657')
 
-    datefield = driver.find_element_by_id("dateOfBirthInput")
-    datefield.click()
-    months = driver.find_elements_by_css_selector("select[class*='month-select'] option")
-    for month in months:
-        if month.text == "June":
-            month.click()
-            time.sleep(5)
-            break
+    with allure.step('Select data'):
+        datefield = driver.find_element_by_id("dateOfBirthInput")
+        datefield.click()
+        months = driver.find_elements_by_css_selector("select[class*='month-select'] option")
+        for month in months:
+            if month.text == "June":
+                month.click()
+                time.sleep(5)
+                break
 
-    days = driver.find_elements_by_css_selector("div[class*='datepicker__day']")
-    for day in days:
-        if day.text == "15":
-            day.click()
-            break
+        days = driver.find_elements_by_css_selector("div[class*='datepicker__day']")
+        for day in days:
+            if day.text == "15":
+                day.click()
+                break
 
     with allure.step('Select Sports checkbox'):
         driver.find_element_by_xpath('//label[@for="hobbies-checkbox-1"]').click()
