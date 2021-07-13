@@ -1,11 +1,8 @@
 import allure
 from allure_commons.types import Severity
-from selenium.webdriver import ActionChains
 from selenium import webdriver
-from selenium.webdriver.support.select import Select
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait as wait
+from selenium.webdriver.common.keys import Keys
+
 
 
 @allure.title('Test')
@@ -27,7 +24,7 @@ def test_forms01():
 
     with allure.step('Enter Full Name'):
         name_input = driver.find_element_by_xpath('//input[@placeholder="name@example.com"]')
-        name_input.send_keys('petroffn@gmail.com')
+        name_input.send_keys('example@gmail.com')
 
     with allure.step('Click on Radio button Yes'):
         driver.find_element_by_xpath('//label[@for="gender-radio-1"]').click()
@@ -55,41 +52,39 @@ def test_forms01():
                 day.click()
                 break
 
+    import time
+    time.sleep(3)
+
+    with allure.step('Select Subjects'):
+        elem = driver.find_element_by_id("subjectsInput")
+        elem.send_keys("English")
+        elem.send_keys(Keys.ARROW_DOWN)
+        elem.send_keys(Keys.RETURN)
+
     with allure.step('Select Sports checkbox'):
         driver.find_element_by_xpath('//label[@for="hobbies-checkbox-1"]').click()
 
     picture = driver.find_element_by_xpath('//input[@id="uploadPicture"]')
     picture.send_keys("D:\\Allure Report - Google Chrome 2021-07-05 11.16.35.png")
 
-    import time
-    time.sleep(4)
-
     with allure.step('Enter Current Address'):
         currentaddress_input = driver.find_element_by_xpath('//textarea[@placeholder="Current Address"]')
-        currentaddress_input.send_keys('вулиця Пушкінська, 2а, Харків, Харківська область, Украина, 61000')
+        currentaddress_input.send_keys('56 Breakspears Rd, London SE4 1UL, UK')
 
     # Need creare tests for State and Sity
     import time
-    time.sleep(4)
+    time.sleep(2)
 
     with allure.step('Enter State'):
         state_button = driver.find_element_by_xpath('//input[@id="react-select-3-input"]')
         state_button.send_keys("NCR", Keys.ENTER)
 
     import time
-    time.sleep(10)
+    time.sleep(3)
 
     with allure.step('Enter City'):
         city_button = driver.find_element_by_xpath('//input[@id="react-select-4-input"]')
-        city_button.send_keys("Delhi", Keys.ENTER)
+        city_button.send_keys("Delhi", Keys.ENTER + Keys.TAB + Keys.ENTER)
 
 
-    import time
-    time.sleep(7)
 
-    with allure.step('Click on Submit button'):
-        submit1_button = driver.find_element_by_xpath('//button[@id="submit"]')
-        submit1_button.click()
-
-    import time
-    time.sleep(10)
