@@ -65,13 +65,13 @@ def test_forms01():
         driver.find_element_by_xpath('//label[@for="hobbies-checkbox-1"]').click()
 
     picture = driver.find_element_by_xpath('//input[@id="uploadPicture"]')
-    picture.send_keys("/Users/nikolaipetrov/Downloads/photo_2020-12-07_19-30-34.jpg")
+    picture.send_keys("D:\Allure Report - Google Chrome 2021-07-05 11.16.35.png")
 
     with allure.step('Enter Current Address'):
         currentaddress_input = driver.find_element_by_xpath('//textarea[@placeholder="Current Address"]')
         currentaddress_input.send_keys('56 Breakspears Rd, London SE4 1UL, UK')
 
-    # Need creare tests for State and Sity
+
     import time
     time.sleep(2)
 
@@ -108,7 +108,7 @@ def test_forms01():
         assert "'Sports'"
 
     with allure.step('Picture'):
-        assert "'photo_2020-12-07_19-30-34.jpg'"
+        assert "'Allure Report - Google Chrome 2021-07-05 11.16.35.png'"
 
     with allure.step('Check Address'):
         assert "'56 Breakspears Rd, London SE4 1UL, UK'"
