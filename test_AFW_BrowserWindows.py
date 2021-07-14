@@ -64,3 +64,4 @@ def test_AFW():
         #WebDriverWait(driver, 10).until(EC.alert_is_present())
         #driver.switch_to.alert.accept()
         assert "'You entered Mykola'" not in driver.page_source
+

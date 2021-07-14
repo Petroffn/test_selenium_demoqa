@@ -11,3 +11,4 @@ def test_AFW():
     with allure.step('Open Practice Form page'):
         driver.get('https://demoqa.com/browser-windows')
         driver.set_window_size(1920, 1080)
+
