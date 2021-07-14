@@ -116,6 +116,6 @@ def test_forms01():
     with allure.step('State ans City'):
         assert "'5NCR Delhi'"
 
-    with allure.step('EClose the modal window'):
+    with allure.step('Close the modal window'):
         close_button = driver.find_element_by_xpath('//button[@id="closeLargeModal"]')
         close_button.click()

@@ -8,7 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 @allure.title('Test')
 @allure.severity(Severity.BLOCKER)
 
-def test_AFW():
+def test_AFW_01():
     driver = webdriver.Chrome()
     with allure.step('Open Practice Form page'):
         driver.get('https://demoqa.com/alerts')
