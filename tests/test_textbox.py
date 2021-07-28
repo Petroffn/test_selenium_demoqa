@@ -11,7 +11,7 @@ class TestTextBox:
         textbox_page = TextBoxPage(driver)
 
         accounts = []
-        with open('testdata.csv', 'r') as csv_file:
+        with open('testdata/testdata.csv', 'r') as csv_file:
             reader = csv.reader(csv_file)
             for line in reader:
                 accounts.append(line)
