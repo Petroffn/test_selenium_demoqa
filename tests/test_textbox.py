@@ -3,6 +3,7 @@ import csv
 import allure
 from selenium.common.exceptions import NoSuchElementException
 from pages.textbox_page import TextBoxPage
+import time
 
 
 class TestTextBox:
@@ -29,6 +30,8 @@ class TestTextBox:
         textbox_page.input_email(email)
         textbox_page.input_current_address(currentaddress)
         textbox_page.input_permanent_address(permanentaddress)
+        time.sleep(3)
+        textbox_page.scroll()
         textbox_page.click_submit_button()
         textbox_page.check_text_name()
         textbox_page.check_text_email()

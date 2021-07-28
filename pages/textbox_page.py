@@ -1,4 +1,6 @@
 import allure
+from selenium.webdriver.common.keys import Keys
+from locators.textbox_locators import TextBoxLocators
 
 
 class TextBoxPage:
@@ -11,31 +13,35 @@ class TextBoxPage:
 
     @allure.step('Select full name field')
     def select_first_name_field(self):
-        self.driver.find_element_by_xpath('//li[@id="item-0"]').click()
+        self.driver.find_element(*TextBoxLocators.select_field_full_name).click()
 
     @allure.step('Enter First Name')
     def input_first_name(self, fullname):
-        self.driver.find_element_by_xpath('//input[@placeholder="Full Name"]').send_keys(fullname)
+        self.driver.find_element(*TextBoxLocators.enter_full_name).send_keys(fullname)
 
     @allure.step('Select full name field')
     def select_first_email_field(self):
-        self.driver.find_element_by_xpath('//input[@id="userEmail"]').click()
+        self.driver.find_element(*TextBoxLocators.select_field_email_name).click()
 
     @allure.step('Enter First Name')
     def input_email(self, email):
-        self.driver.find_element_by_xpath('//input[@id="userEmail"]').send_keys(email)
+        self.driver.find_element(*TextBoxLocators.enter_email).send_keys(email)
 
     @allure.step('Enter Current Address')
     def input_current_address(self, currentaddress):
-        self.driver.find_element_by_xpath('//textarea[@placeholder = "Current Address"]').send_keys(currentaddress)
+        self.driver.find_element(*TextBoxLocators.enter_current_address).send_keys(currentaddress)
 
-    @allure.step('Enter Current Address')
+    @allure.step('Enter Permanent Address')
     def input_permanent_address(self, permanentaddress):
-        self.driver.find_element_by_xpath('//textarea[@id="permanentAddress"]').send_keys(permanentaddress)
+        self.driver.find_element(*TextBoxLocators.enter_permanent_address).send_keys(permanentaddress)
+
+    @allure.step('scroll')
+    def scroll(self):
+        self.driver.find_element_by_tag_name('html').send_keys(Keys.END)
 
     @allure.step('click on the submit button')
     def click_submit_button(self):
-        self.driver.find_element_by_xpath('//button[@id="submit"]').click()
+        self.driver.find_element(*TextBoxLocators.button_submit).click()
 
     @allure.step('Check entered text')
     def check_text_name(self):
