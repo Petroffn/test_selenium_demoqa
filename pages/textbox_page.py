@@ -53,3 +53,6 @@ class TextBoxPage:
     def check_text_currentaddress(self):
         assert "'Current Address :40 Central Park S, New York, NY 10019'"
 
+    @allure.step('Check Permananet Address text')
+    def check_text_permananetaddress(self):
+        assert "'1 Central Park West New York NY 10023'"

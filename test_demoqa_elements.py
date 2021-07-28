@@ -14,33 +14,6 @@ def test_case01():
         driver.get('https://demoqa.com/elements')
         driver.set_window_size(1920, 1080)
 
-    with allure.step('Click on Text Box button'):
-        log_in_button = driver.find_element_by_xpath('//li[@id="item-0"]')
-        log_in_button.click()
-
-    with allure.step('Enter Full Name'):
-        fullname_input = driver.find_element_by_xpath('//input[@placeholder="Full Name"]')
-        fullname_input.send_keys('Mykola Petrov')
-
-    with allure.step('Enter email'):
-        email_input = driver.find_element_by_xpath('//input[@placeholder = "name@example.com"]')
-        email_input.send_keys('petroffn@gmail.com')
-
-    with allure.step('Enter Current Address'):
-        currentaddress_input = driver.find_element_by_xpath('//textarea[@placeholder = "Current Address"]')
-        currentaddress_input.send_keys('вулиця Пушкінська, 2а, Харків, Харківська область, Украина, 61000')
-
-    with allure.step('Enter Permanent Address'):
-        currentaddress_input = driver.find_element_by_xpath('//textarea[@id="permanentAddress"]')
-        currentaddress_input.send_keys('вулиця Героїв Праці, 7, Харків, Харківська область, Украина, 61000')
-
-    with allure.step('Click on Submit button'):
-        submit_button = driver.find_element_by_xpath('//button[@id="submit"]')
-        submit_button.click()
-
-
-    with allure.step('Check entered text'):
-        assert "'Name:Mykola Petrov Email:petroffn@gmail.com Current Address :вулиця Пушкінська, 2а, Харків, Харківська область, Украина, 61000 Permananet Address :вулиця Героїв Праці, 7, Харків, Харківська область, Украина, 61000" not in driver.page_source
 
 def test_case02():
     driver = webdriver.Chrome()

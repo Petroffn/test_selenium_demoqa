@@ -34,5 +34,5 @@ class TestTextBox:
         textbox_page.check_text_email()
         textbox_page.check_text_name()
         textbox_page.check_text_currentaddress()
-
+        textbox_page.check_text_permananetaddress()
 
