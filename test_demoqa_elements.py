@@ -15,8 +15,8 @@ def test_case01():
         driver.set_window_size(1920, 1080)
 
     with allure.step('Click on Text Box button'):
-        elements_button = driver.find_element_by_xpath('//li[@id="item-0"]')
-        elements_button.click()
+        log_in_button = driver.find_element_by_xpath('//li[@id="item-0"]')
+        log_in_button.click()
 
     with allure.step('Enter Full Name'):
         fullname_input = driver.find_element_by_xpath('//input[@placeholder="Full Name"]')
