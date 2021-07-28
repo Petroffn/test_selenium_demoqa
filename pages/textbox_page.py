@@ -37,7 +37,19 @@ class TextBoxPage:
     def click_submit_button(self):
         self.driver.find_element_by_xpath('//button[@id="submit"]').click()
 
+    @allure.step('Check entered text')
+    def check_text_name(self):
+        assert "'Name:Mykola Petrov'"
 
+    @allure.step('Check Full Name text')
+    def check_text_name(self):
+        assert "'Name:Mykola Petrov'"
 
-    #@allure.step('Check entered text'):
-     #   assert "'Name:Mykola Petrov Email:petroffn@gmail.com Current Address :вулиця Пушкінська, 2а, Харків, Харківська область, Украина, 61000 Permananet Address :вулиця Героїв Праці, 7, Харків, Харківська область, Украина, 61000" not in driver.page_source
+    @allure.step('Check Full Name text')
+    def check_text_email(self):
+        assert "'Email:example@example.com'"
+
+    @allure.step('Check Current Address text')
+    def check_text_currentaddress(self):
+        assert "'Current Address :40 Central Park S, New York, NY 10019'"
+

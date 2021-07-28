@@ -30,6 +30,9 @@ class TestTextBox:
         textbox_page.input_current_address(currentaddress)
         textbox_page.input_permanent_address(permanentaddress)
         textbox_page.click_submit_button()
-        textbox_page.check_text()
+        textbox_page.check_text_name()
+        textbox_page.check_text_email()
+        textbox_page.check_text_name()
+        textbox_page.check_text_currentaddress()
 
 
