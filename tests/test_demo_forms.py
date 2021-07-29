@@ -5,9 +5,9 @@ from selenium.webdriver.common.keys import Keys
 
 
 
-@allure.title('Test')
-@allure.severity(Severity.BLOCKER)
 
+class test_demo_form:
+    @allure.title()
 def test_forms01():
     driver = webdriver.Chrome()
     with allure.step('Open Practice Form page'):
@@ -86,8 +86,6 @@ def test_forms01():
         city_button = driver.find_element_by_xpath('//input[@id="react-select-4-input"]')
         city_button.send_keys("Delhi", Keys.ENTER + Keys.TAB + Keys.ENTER)
 
-    import time
-    time.sleep(10)
 
     with allure.step('Check text Student Name'):
         assert "'Mykola Petrov'"
