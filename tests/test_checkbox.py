@@ -1,3 +1,13 @@
+import allure
+from pages.checkbox_page import
+
+class TestCheckBox:
+    @allure.title('Check checkboxes')
+    def test_open_page(self, driver):
+        checkbox_page = TestCheckPage(driver)
+
+        checkbox_page.test_open_page()
+
 def test_case02():
     driver = webdriver.Chrome()
     driver.get('https://demoqa.com/elements')
