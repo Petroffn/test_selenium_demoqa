@@ -1,5 +1,7 @@
 import allure
 from selenium.webdriver.common.keys import Keys
+
+from config import BASE_URL
 from locators.demo_forms_locators import DemoFormsLocators
 
 
@@ -9,7 +11,7 @@ class DemoFormPage:
 
     @allure.step('Open https://demoqa.com/automation-practice-form Page')
     def test_open_page(self):
-        self.driver.get('https://demoqa.com/automation-practice-form')
+        self.driver.get(BASE_URL + '/automation-practice-form')
 
     @allure.step('Enter first name')
     def enter_first_name(self, firstname):
@@ -87,35 +89,38 @@ class DemoFormPage:
     def click_submit_button(self):
         self.driver.find_element(*DemoFormsLocators.button_submit).click()
 
+    @allure.step('Check text Student Name')
+    def check_text_name(self):
+        assert "'Mykola Petrov'"
 
-'''with allure.step('Check text Student Name'):
-    assert "'Mykola Petrov'"
+    @allure.step('Check text Student Email')
+    def check_email(self):
+        assert "'example@gmail.com'"
 
-with allure.step('Check text Student Email'):
-    assert "'example@gmail.com'"
+    @allure.step('Check Gender male')
+    def check_gender(self):
+        assert "'Male'"
 
-with allure.step('Check Gender'):
-    assert "'Male'"
+    @allure.step('Check Date of Birth')
+    def check_dob(self):
+        assert "'15 June,2021'"
 
-with allure.step('Check Date of Birth'):
-    assert "'15 June,2021'"
+    @allure.step('Subjects')
+    def check_subject(self):
+        assert "'English'"
 
-with allure.step('Subjects'):
-    assert "'English'"
+    @allure.step('Check Hobbies')
+    def check_hobbies(self):
+        assert "'Sports'"
 
-with allure.step('Check Hobbies'):
-    assert "'Sports'"
+    @allure.step('Picture')
+    def check_image(self):
+        assert "'Allure Report - Google Chrome 2021-07-05 11.16.35.png'"
 
-with allure.step('Picture'):
-    assert "'Allure Report - Google Chrome 2021-07-05 11.16.35.png'"
+    @allure.step('Check Address')
+    def check_address(self):
+        assert "'56 Breakspears Rd, London SE4 1UL, UK'"
 
-with allure.step('Check Address'):
-    assert "'56 Breakspears Rd, London SE4 1UL, UK'"
-
-with allure.step('State ans City'):
-    assert "'5NCR Delhi'"
-
-with allure.step('Close the modal window'):
-    close_button = driver.find_element_by_xpath('//button[@id="closeLargeModal"]')
-    close_button.click()
-'''
+    @allure.step('State ans City')
+    def check_state_city(self):
+        assert "'5NCR Delhi'"

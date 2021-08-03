@@ -1,5 +1,7 @@
 import allure
 from selenium.webdriver.common.keys import Keys
+
+from config import BASE_URL
 from locators.textbox_locators import TextBoxLocators
 
 
@@ -9,7 +11,7 @@ class TextBoxPage:
 
     @allure.step('Open https://demoqa.com/text-box Page')
     def test_open_page(self):
-        self.driver.get('https://demoqa.com/text-box')
+        self.driver.get(BASE_URL + '/text-box')
 
     @allure.step('Select full name field')
     def select_first_name_field(self):
