@@ -3,7 +3,6 @@ from selenium.webdriver.common.keys import Keys
 from locators.demo_forms_locators import DemoFormsLocators
 
 
-
 class DemoFormPage:
     def __init__(self, driver):
         self.driver = driver
@@ -51,16 +50,16 @@ class DemoFormPage:
     @allure.step('Enter Subject')
     def enter_subject(self, subject):
         self.driver.find_element(*DemoFormsLocators.enter_subject).send_keys(subject)
-        self.driver.send_keys(Keys.ARROW_DOWN)
-        self.driver.send_keys(Keys.RETURN)
+        self.driver.find_element(*DemoFormsLocators.enter_subject).send_keys(Keys.ARROW_DOWN)
+        self.driver.find_element(*DemoFormsLocators.enter_subject).send_keys(Keys.RETURN)
 
     @allure.step('Click on Sports checkbox')
     def click_sports_checkbox(self):
         self.driver.find_element(*DemoFormsLocators.click_sports_checkbox).click()
 
-    '''@allure.step('Add picture')
+    @allure.step('Add picture')
     def add_image(self, image):
-        self.driver.find_element(*DemoFormsLocators.add_image).send_keys(image)'''
+        self.driver.find_element(*DemoFormsLocators.add_image).send_keys(image)
 
     @allure.step('Enter Current Address')
     def select_currentaddress_field(self):
@@ -72,11 +71,21 @@ class DemoFormPage:
 
     @allure.step('Enter State')
     def enter_state(self, state):
-        self.driver.find_element(*DemoFormsLocators.enter_state).send_keys(state, Keys.ENTER)
+        self.driver.find_element(*DemoFormsLocators.enter_state).send_keys(state)
+        self.driver.find_element(*DemoFormsLocators.enter_state).send_keys(Keys.ENTER)
 
     @allure.step('Enter City')
     def enter_city(self, city):
-        self.driver.find_element(*DemoFormsLocators.enter_city).send_keys(city, Keys.ENTER + Keys.TAB + Keys.ENTER)
+        self.driver.find_element(*DemoFormsLocators.enter_city).send_keys(city)
+        self.driver.find_element(*DemoFormsLocators.enter_city).send_keys(Keys.ENTER)
+
+    @allure.step('scroll')
+    def scroll(self):
+        self.driver.find_element_by_tag_name('html').send_keys(Keys.END)
+
+    @allure.step('click on the submit button')
+    def click_submit_button(self):
+        self.driver.find_element(*DemoFormsLocators.button_submit).click()
 
 
 '''with allure.step('Check text Student Name'):

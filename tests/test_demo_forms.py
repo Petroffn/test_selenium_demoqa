@@ -25,7 +25,7 @@ class TestDemoForm:
         currentaddress = (line[5])
         state = (line[6])
         city = (line[7])
-        image = "../testdata/sample.jpeg"
+        image = 'D:\\test_selenium_demoqa\\testdata\\sample.jpeg'
 
         deomoform_page.test_open_page()
         deomoform_page.enter_first_name(firstname)
@@ -39,8 +39,9 @@ class TestDemoForm:
         deomoform_page.select_day()
         deomoform_page.enter_subject(subject)
         deomoform_page.click_sports_checkbox()
-        #deomoform_page.add_image(image)
+        deomoform_page.add_image(image)
         deomoform_page.select_currentaddress_field()
         deomoform_page.input_current_address(currentaddress)
         deomoform_page.enter_state(state)
         deomoform_page.enter_city(city)
+        deomoform_page.click_submit_button()

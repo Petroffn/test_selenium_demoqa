@@ -12,9 +12,11 @@ class DemoFormsLocators:
     select_month = (By.XPATH, '/html/body/div[2]/div/div/div[2]/div[2]/div[1]/form/div[5]/div[2]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/select/option[4]')
     select_day = (By.XPATH, '/html/body/div[2]/div/div/div[2]/div[2]/div[1]/form/div[5]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/div[3]/div[5]')
     enter_subject = (By.ID, 'subjectsInput')
-    click_sports_checkbox = (By.XPATH, '//*[@id="hobbies-checkbox-1"]')
-    add_image = (By.XPATH, '//*[@id="uploadPicture"]')
+    click_sports_checkbox = (By.XPATH, '//*[@for="hobbies-checkbox-1"]')
+    add_image = (By.XPATH, '/html/body/div[2]/div/div/div[2]/div[2]/div[1]/form/div[8]/div[2]/div/input')
     select_currentaddress_field = (By.ID, 'currentAddress')
     enter_current_address = (By.ID, 'currentAddress')
     enter_state = (By.ID, 'react-select-3-input')
     enter_city = (By.ID, 'react-select-4-input')
+    button_submit = (By.XPATH, '/html/body/div[2]/div/div/div[2]/div[2]/div[1]/form/div[11]/div/button')
+
