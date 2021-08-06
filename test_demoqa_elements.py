@@ -11,25 +11,7 @@ from selenium import webdriver
 
 
 
-def test_case03():
-    driver = webdriver.Chrome()
-    driver.get('https://demoqa.com/elements')
-    driver.set_window_size(1920, 1080)
-    with allure.step('Click on Radio button'):
-        elements_button = driver.find_element_by_xpath('//li[@id="item-2"]')
-        elements_button.click()
 
-    with allure.step('Click on Radio button Yes'):
-        driver.find_element_by_xpath('//label[@for="yesRadio"]').click()
-
-    with allure.step('Check entered text'):
-        assert "'You have selected Yes'" not in driver.page_source
-
-    with allure.step('Click on Radio button "Impressive"'):
-        driver.find_element_by_xpath('//label[@for="impressiveRadio"]').click()
-
-    with allure.step('Check entered text'):
-        assert "'You have selected Impressive'" not in driver.page_source
 
 
 def test_case05():
